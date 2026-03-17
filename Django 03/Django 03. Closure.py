@@ -6,3 +6,20 @@ def outer(...):
     return inner
 """
 
+def make_counter():
+    count = 0
+    def counter():
+        nonlocal count
+        count += 1
+        return count
+    return counter
+
+clicks= make_counter()
+print(clicks())
+print(clicks())
+print(clicks())
+print(clicks())
+
+
+
+
